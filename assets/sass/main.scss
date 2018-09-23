@@ -1,0 +1,475 @@
+@import url( 'https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700');
+@import "reset";
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background: #19202a;
+}
+
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+header {
+  position: absolute;
+  z-index: 3;
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  padding: 15px;
+  .logo {
+    width: 14%;
+    img {
+      width: 100%;
+    }
+  }
+  nav {
+    align-self: center;
+    a {
+      color: #ffffff;
+      font-size: 1.2em;
+      font-weight: 300;
+      padding: 0 10px;
+    }
+  }
+  .menu-btn {
+    font-weight: 700;
+    color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+    font-size: 1.6rem;
+    display: none;
+  }
+}
+.mobile-menu {
+  background: #ffffff;
+  display: none;
+  flex-direction: column;
+  padding: 40px 0;
+  position: absolute;
+  height: 35vh;
+  width: 50%;
+  z-index: 10;
+  top: 0;
+  text-align: center;
+  transform: translate3d(-120%, 0, 0);
+  transition: all .4s ease-in-out;
+  -webkit-box-shadow: 2px 0px 78px -15px rgba(0,0,0,0.75);
+  -moz-box-shadow: 2px 0px 78px -15px rgba(0,0,0,0.75);
+  box-shadow: 2px 0px 78px -15px rgba(0,0,0,0.75);
+}
+.mobile-menu.active {
+  transform: translate3d(0, 0, 0);
+}
+.mobile-menu a {
+  color: black;
+  padding: 15px;
+}
+.mobile-menu a:hover {
+  background: #ff5253;
+  color: white;
+}
+
+#top-section {
+  position: relative;
+  height: 100vh;
+  .blurred-bg {
+    background-image: linear-gradient(45deg, rgba(25,32,42,1) 0%,rgba(176,38,183,0.27) 73%,rgba(125,185,232,0) 100%), url('/img/london-graffiti-tunnel.jpg');
+    background-size: cover;
+    height: 100vh;
+    width:100%;
+    filter: blur(39px) saturate(130%);
+    position: absolute;
+    z-index: 1;
+ }
+ .floating-img {
+    position: absolute;
+    z-index: 2;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    .diplo-img {
+      width: 56%;
+      img {
+        width: 100%;
+        filter: contrast(120%);
+      }
+    }
+  }
+}
+
+#bio {
+  position: relative;
+  z-index: 3;
+  background: #222222;
+  padding: 100px 0;
+  .container {
+    display: flex;
+  }
+  p {
+    color: #ffffff;
+    width: 50%;
+    padding: 0 50px;
+    line-height: 2.3;
+    font-size: 1em;
+  }
+  .logo-centered {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    padding: 0 50px;
+    img {
+      max-width: 100%;
+    }
+  }
+}
+
+#media {
+  background-image: url("/img/hexagon-bg.jpg");
+  background-size: cover;
+  padding: 100px 0;
+  .title {
+    font-size: 2em;
+    font-weight: 300;
+    text-transform: uppercase;
+    padding: 20px;
+    text-align: center;
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+    color: #ffffff;
+  }
+  .videos {
+    display: grid;
+    padding: 80px 50px 0;
+    grid-template-columns: 48% 48%;
+    grid-gap: 50px;
+    .video{
+      border-radius: 4px;
+      overflow: hidden;
+      height: 300px;
+      -webkit-box-shadow: 0px 13px 24px -8px rgba(0,0,0,0.75);
+      -moz-box-shadow: 0px 13px 24px -8px rgba(0,0,0,0.75);
+      box-shadow: 0px 13px 24px -8px rgba(0,0,0,0.75);
+      iframe {
+        height: 100%;
+      }
+    }
+  }
+}
+
+#music {
+  padding: 80px 0;
+  position: relative;
+  .blurred-bg {
+    background-image: linear-gradient(45deg, rgba(255,253,60,1) 0%,rgba(176,38,183,0.27) 68%,rgba(125,185,232,0) 100%), url('/img/london-graffiti-tunnel.jpg');
+    background-size: cover;
+    height: 100%;
+    width:100%;
+    filter: blur(39px) saturate(130%);
+    position: absolute;
+    z-index: 1;
+  }
+  .container {
+    display: flex;
+    padding: 0 50px;
+    position: relative;
+    z-index: 3;
+    .info {
+      width: 50%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      color: #ffffff;
+      .title {
+        font-size: 3.3em;
+        font-weight: 700;
+        text-align: center;
+        margin-bottom: 15px;
+      }
+      .sub-title {
+        font-size: 1em;
+        font-weight: 400;
+        text-align: center;
+        text-transform: capitalize;
+        margin-bottom: 100px;
+      }
+      .singles {
+        width: 57%;
+        display: grid;
+        grid-template-columns: 50% 50%;
+        grid-column-gap: 16%;
+        margin-bottom: 80px;
+        li {
+          font-size: 1.5em;
+          font-weight: 300;
+          margin-bottom: 20px;
+        }
+      }
+      .logos {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-gap: 20px;
+      }
+    }
+    .album-cover {
+      width: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      img {
+        width: 50%;
+      }
+    }
+  }
+}
+#tour {
+  background: #222222;
+  position: relative;
+  z-index: 4;
+  .top-img {
+    background-image: url('/img/dip-group.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    filter: saturate(0%) contrast(150%);
+    height: 300px;
+  }
+  .tour-dates {
+    background: #222222;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 80px 0;
+    .title {
+      text-align: center;
+      color: #ffffff;
+      text-transform: uppercase;
+      font-size: 2.2em;
+      text-align: center;
+      margin: 0 0 80px;
+    }
+    .dates {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-column-gap: 25px;
+      li {
+        color: #ffffff;
+        font-size: 1.2em;
+        padding: 9px 0;
+        margin: 10px;
+        .city {
+          font-weight: 700;
+          padding: 0 9px;
+        }
+        .location {
+          font-weight: 300;
+          padding: 0 9px;
+        }
+        .date {
+          font-weight: 500;
+          color: #f14848;
+        }
+      }
+    }
+  }
+}
+footer {
+  background: #1b1b1b;
+  position: relative;
+  z-index: 4;
+  padding: 2%;
+  text-align: center;
+  opacity: .9;
+  img {
+    max-width: 12%;
+  }
+  .designed-by {
+    color: #ffffff;
+    padding: 5px 0;
+  }
+}
+
+// start queries for re-sizing top section floating img
+
+@media screen and (min-width: 1484px) and (max-width: 1630px) {
+  #top-section {
+    .floating-img {
+      .diplo-img {
+          width: 66%;
+      }
+    }
+  }
+}
+@media screen and (min-width: 1244px) and (max-width: 1483px) {
+  #top-section {
+    .floating-img {
+      .diplo-img {
+          width: 70%;
+      }
+    }
+  }
+}
+@media screen and (min-width: 1000px) and (max-width: 1243px) {
+  #top-section {
+    .floating-img {
+      .diplo-img {
+          width: 80%;
+      }
+    }
+  }
+}
+@media screen and (max-width: 999px) {
+  #top-section {
+    .floating-img {
+      .diplo-img {
+          width: 100%;
+      }
+    }
+  }
+  #tour {
+    .top-img {
+      height: 211px;
+    }
+  }
+}
+
+// end of floating image resizing. Start of tablets\
+
+@media screen and (max-width: 939px) {
+  #bio {
+    .container {
+      flex-direction: column-reverse;
+      p {
+        width: 100%;
+      }
+      .logo-centered {
+        width: 100%;
+        padding: 0 50px 100px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 769px) {
+  #top-section {
+      .floating-img {
+        height: 80vh;
+      }
+  }
+  #media {
+    .container {
+      .videos {
+        display: block;
+        .video {
+          margin-bottom: 25px;
+        }
+      }
+    }
+  }
+  #music {
+    .container {
+      flex-direction: column-reverse;
+      .info {
+        width: 100%;
+      }
+      .album-cover {
+        width: 100%;
+        margin: 10px 0 80px;
+      }
+    }
+  }
+  #tour {
+    .top-img {
+      height: 157px;
+    }
+  }
+}
+
+// medium phones
+
+@media screen and (max-width: 467px) {
+  header {
+    .logo {
+      width: 33%;
+      padding: 15px;
+    }
+    nav {
+      a {
+        display: none;
+      }
+    }
+    .menu-btn {
+      display: flex;
+      cursor: pointer;
+    }
+  } 
+  .mobile-menu {
+    display: flex;
+  }
+  #music {
+    .container {
+      .info {
+        .singles {
+          width: 100%;
+        }
+        .logos {
+          grid-template-columns: 1fr 1fr;
+        }
+      }
+    }
+  }
+  #tour {
+    .top-img {
+      height: 101px;
+    }
+    .container {
+      .tour-dates {
+        .dates {
+          text-align: center;
+          li {
+            span {
+              display: block;
+            }
+          }
+        }
+      }
+    }
+  }
+  footer {
+    img {
+      max-width: 25%;
+    }
+  }
+}
+
+// small phones
+
+@media screen and (max-width: 375px) {
+  header {
+    .logo {
+      width: 38%;
+      padding: 15px;
+    }
+  }
+  #music {
+    .container {
+      .info {
+        .logos {
+          grid-template-columns: 1fr;
+        }
+      }
+    }
+  }
+}
